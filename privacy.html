@@ -3,65 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politika e Privatësisë - PyetShqip</title>
+    <title>Politika e Privatësisë / Privacy Policy - PyetShqip</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>body { font-family: 'Inter', sans-serif; }</style>
+    <script>
+        function setLanguage(lang) {
+            if (lang === 'sq') {
+                document.getElementById('content-sq').style.display = 'block';
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('btn-sq').classList.add('bg-red-600', 'text-white', 'border-red-600');
+                document.getElementById('btn-sq').classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+                document.getElementById('btn-en').classList.remove('bg-red-600', 'text-white', 'border-red-600');
+                document.getElementById('btn-en').classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+            } else {
+                document.getElementById('content-sq').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('btn-en').classList.add('bg-red-600', 'text-white', 'border-red-600');
+                document.getElementById('btn-en').classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+                document.getElementById('btn-sq').classList.remove('bg-red-600', 'text-white', 'border-red-600');
+                document.getElementById('btn-sq').classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-900">
-    <div class="max-w-3xl mx-auto p-6 md:p-12 my-10 bg-white shadow-lg rounded-2xl border border-gray-100">
-        <a href="landing_standalone.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-red-600 mb-8 transition-colors">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Kthehu te Kryefaqja
-        </a>
+    <div class="max-w-3xl mx-auto p-6 md:p-12 my-10 bg-white shadow-lg rounded-2xl border border-gray-100 relative">
+        
+        <!-- HEADER / NAVIGATION -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <a href="landing_standalone.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-red-600 transition-colors text-sm font-medium">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span id="back-link">Kthehu / Back</span>
+            </a>
 
-        <div class="border-b border-gray-100 pb-6 mb-8">
-            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">DOKUMENT ZYRTAR</p>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Politika e Privatësisë</h1>
-            <p class="text-sm text-gray-400">Përditësimi i fundit: Shkurt 2025</p>
+            <!-- LANGUAGE TOGGLE -->
+            <div class="flex items-center gap-2 bg-gray-50 p-1 rounded-lg border border-gray-200">
+                <button id="btn-sq" onclick="setLanguage('sq')" class="px-4 py-1.5 rounded-md text-xs font-bold transition-all bg-red-600 text-white border border-red-600 shadow-sm">
+                    SHQIP
+                </button>
+                <button id="btn-en" onclick="setLanguage('en')" class="px-4 py-1.5 rounded-md text-xs font-bold transition-all bg-white text-gray-600 border border-gray-200 hover:bg-gray-100">
+                    ENGLISH
+                </button>
+            </div>
         </div>
 
-        <div class="prose prose-red max-w-none text-gray-700 space-y-6 leading-relaxed">
-            <p class="font-medium text-lg">
-                Mirësevini në PyetShqip. Ne e marrim seriozisht privatësinë tuaj. Ky dokument shpjegon se si ne mbledhim, përdorim dhe mbrojmë të dhënat tuaja.
-            </p>
+        <!-- ALBANIAN CONTENT -->
+        <div id="content-sq">
+            <div class="border-b border-gray-100 pb-6 mb-8">
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">DOKUMENT ZYRTAR</p>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Politika e Privatësisë</h1>
+                <p class="text-sm text-gray-400">Përditësimi i fundit: Shkurt 2025</p>
+            </div>
 
-            <h3 class="text-xl font-bold text-gray-900 mt-8">1. Të dhënat që mbledhim</h3>
-            <p>Për të ofruar shërbimin tonë, ne mbledhim vetëm informacionin thelbësor:</p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li><strong>Informacioni i Profilit:</strong> Emri, emaili dhe vendi i banimit.</li>
-                <li><strong>Komunikimi:</strong> Mesazhet që shkëmbeni me asistentin AI (të cilat përpunohen për të gjeneruar përgjigje).</li>
-                <li><strong>Të dhëna teknike:</strong> Lloji i pajisjes për optimizim të aplikacionit.</li>
-            </ul>
+            <div class="prose prose-red max-w-none text-gray-700 space-y-6 leading-relaxed">
+                <p class="font-medium text-lg">
+                    Mirësevini në PyetShqip. Ne e marrim seriozisht privatësinë tuaj. Ky dokument shpjegon se si ne mbledhim, përdorim dhe mbrojmë të dhënat tuaja.
+                </p>
 
-            <h3 class="text-xl font-bold text-gray-900 mt-8">2. Përdorimi i Inteligjencës Artificiale</h3>
-            <p>
-                PyetShqip përdor teknologji të avancuar AI (si Google Gemini) për të përpunuar pyetjet tuaja. 
-                Ne nuk i shesim bisedat tuaja te palët e treta për qëllime reklamimi.
-            </p>
+                <h3 class="text-xl font-bold text-gray-900 mt-8">1. Të dhënat që mbledhim</h3>
+                <p>Për të ofruar shërbimin tonë, ne mbledhim vetëm informacionin thelbësor:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Informacioni i Profilit:</strong> Emri, emaili dhe vendi i banimit.</li>
+                    <li><strong>Komunikimi:</strong> Mesazhet që shkëmbeni me asistentin AI (të cilat përpunohen për të gjeneruar përgjigje).</li>
+                    <li><strong>Të dhëna teknike:</strong> Lloji i pajisjes për optimizim të aplikacionit.</li>
+                </ul>
 
-            <h3 class="text-xl font-bold text-gray-900 mt-8">3. Siguria e të Dhënave</h3>
-            <p>
-                Të gjitha të dhënat ruhen në servera të sigurt (Firebase/Google Cloud) me standarde të larta sigurie. 
-                Pagesat (nëse aplikohen) përpunohen nga ofrues të çertifikuar si Stripe ose Apple/Google Pay; ne nuk ruajmë kurrë numrat e kartës suaj të kreditit.
-            </p>
+                <h3 class="text-xl font-bold text-gray-900 mt-8">2. Përdorimi i Inteligjencës Artificiale</h3>
+                <p>
+                    PyetShqip përdor teknologji të avancuar AI (si Google Gemini) për të përpunuar pyetjet tuaja. 
+                    Ne nuk i shesim bisedat tuaja te palët e treta për qëllime reklamimi.
+                </p>
 
-            <h3 class="text-xl font-bold text-gray-900 mt-8">4. Të Drejtat Tuaja</h3>
-            <p>Ju keni të drejtë të:</p>
-            <ul class="list-disc pl-5 space-y-2">
-                <li>Kërkoni akses në të dhënat tuaja.</li>
-                <li>Kërkoni fshirjen e llogarisë dhe të gjitha të dhënave (opsioni "Fshij Llogarinë" në aplikacion).</li>
-                <li>Tërhiqni pëlqimin për komunikime marketing.</li>
-            </ul>
+                <h3 class="text-xl font-bold text-gray-900 mt-8">3. Siguria e të Dhënave</h3>
+                <p>
+                    Të gjitha të dhënat ruhen në servera të sigurt (Firebase/Google Cloud) me standarde të larta sigurie. 
+                    Pagesat (nëse aplikohen) përpunohen nga ofrues të çertifikuar si Stripe ose Apple/Google Pay; ne nuk ruajmë kurrë numrat e kartës suaj të kreditit.
+                </p>
 
-            <h3 class="text-xl font-bold text-gray-900 mt-8">5. Kontakt</h3>
-            <p>
-                Për çdo pyetje rreth privatësisë, ju lutem na kontaktoni në: <a href="mailto:support@pyetshqip.com" class="text-red-600 font-bold hover:underline">support@pyetshqip.com</a>.
-            </p>
+                <h3 class="text-xl font-bold text-gray-900 mt-8">4. Të Drejtat Tuaja</h3>
+                <p>Ju keni të drejtë të:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Kërkoni akses në të dhënat tuaja.</li>
+                    <li>Kërkoni fshirjen e llogarisë dhe të gjitha të dhënave (opsioni "Fshij Llogarinë" në aplikacion).</li>
+                    <li>Tërhiqni pëlqimin për komunikime marketing.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8">5. Kontakt</h3>
+                <p>
+                    Për çdo pyetje rreth privatësisë, ju lutem na kontaktoni në: <a href="mailto:support@pyetshqip.com" class="text-red-600 font-bold hover:underline">support@pyetshqip.com</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- ENGLISH CONTENT -->
+        <div id="content-en" style="display: none;">
+            <div class="border-b border-gray-100 pb-6 mb-8">
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">OFFICIAL DOCUMENT</p>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Privacy Policy</h1>
+                <p class="text-sm text-gray-400">Last updated: February 2025</p>
+            </div>
+
+            <div class="prose prose-red max-w-none text-gray-700 space-y-6 leading-relaxed">
+                <p class="font-medium text-lg">
+                    Welcome to PyetShqip. We take your privacy seriously. This document explains how we collect, use, and protect your data.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8">1. Information We Collect</h3>
+                <p>To provide our service, we only collect essential information:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Profile Information:</strong> Name, email address, and country of residence.</li>
+                    <li><strong>Communication:</strong> Messages you exchange with the AI assistant (processed to generate responses).</li>
+                    <li><strong>Technical Data:</strong> Device type for application optimization.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8">2. Use of Artificial Intelligence</h3>
+                <p>
+                    PyetShqip utilizes advanced AI technology (such as Google Gemini) to process your queries. 
+                    We do not sell your conversation data to third parties for advertising purposes.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8">3. Data Security</h3>
+                <p>
+                    All data is stored on secure servers (Firebase/Google Cloud) adhering to high security standards. 
+                    Payments (if applicable) are processed by certified providers like Stripe or Apple/Google Pay; we never store your credit card numbers.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8">4. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Request access to your data.</li>
+                    <li>Request deletion of your account and all associated data (via the "Delete Account" option in the app).</li>
+                    <li>Withdraw consent for marketing communications.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8">5. Contact</h3>
+                <p>
+                    For any questions regarding privacy, please contact us at: <a href="mailto:support@pyetshqip.com" class="text-red-600 font-bold hover:underline">support@pyetshqip.com</a>.
+                </p>
+            </div>
         </div>
 
         <div class="mt-12 pt-8 border-t border-gray-100 text-center">
-            <p class="text-sm text-gray-400">&copy; 2025 PyetShqip. Të gjitha të drejtat e rezervuara.</p>
+            <p class="text-sm text-gray-400">&copy; 2025 PyetShqip. All rights reserved.</p>
         </div>
     </div>
 </body>
