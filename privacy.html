@@ -9,20 +9,26 @@
     <style>body { font-family: 'Inter', sans-serif; }</style>
     <script>
         function setLanguage(lang) {
+            // Keep both language blocks visible while only toggling button styles
+            document.getElementById('content-sq').style.display = 'block';
+            document.getElementById('content-en').style.display = 'block';
+
+            const activeClasses = ['bg-red-600', 'text-white', 'border-red-600'];
+            const inactiveClasses = ['bg-white', 'text-gray-600', 'border-gray-200'];
+
+            const sqBtn = document.getElementById('btn-sq');
+            const enBtn = document.getElementById('btn-en');
+
             if (lang === 'sq') {
-                document.getElementById('content-sq').style.display = 'block';
-                document.getElementById('content-en').style.display = 'none';
-                document.getElementById('btn-sq').classList.add('bg-red-600', 'text-white', 'border-red-600');
-                document.getElementById('btn-sq').classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-                document.getElementById('btn-en').classList.remove('bg-red-600', 'text-white', 'border-red-600');
-                document.getElementById('btn-en').classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+                sqBtn.classList.add(...activeClasses);
+                sqBtn.classList.remove(...inactiveClasses);
+                enBtn.classList.remove(...activeClasses);
+                enBtn.classList.add(...inactiveClasses);
             } else {
-                document.getElementById('content-sq').style.display = 'none';
-                document.getElementById('content-en').style.display = 'block';
-                document.getElementById('btn-en').classList.add('bg-red-600', 'text-white', 'border-red-600');
-                document.getElementById('btn-en').classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-                document.getElementById('btn-sq').classList.remove('bg-red-600', 'text-white', 'border-red-600');
-                document.getElementById('btn-sq').classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+                enBtn.classList.add(...activeClasses);
+                enBtn.classList.remove(...inactiveClasses);
+                sqBtn.classList.remove(...activeClasses);
+                sqBtn.classList.add(...inactiveClasses);
             }
         }
     </script>
@@ -97,7 +103,7 @@
         </div>
 
         <!-- ENGLISH CONTENT -->
-        <div id="content-en" style="display: none;">
+        <div id="content-en">
             <div class="border-b border-gray-100 pb-6 mb-8">
                 <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">OFFICIAL DOCUMENT</p>
                 <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Privacy Policy</h1>
